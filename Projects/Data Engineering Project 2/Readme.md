@@ -1,5 +1,7 @@
 # NiFi Flow Loading Instructions
 
+![Project Screenshot]([images/screenshot.png](https://github.com/AkhilHaroldPeter/Nifi/blob/master/Projects/Data%20Engineering%20Project%202/NifiFlow.png))
+
 This document provides step-by-step instructions on how to load and run a NiFi flow template. Please ensure you have the necessary dependencies installed before proceeding.
 
 ## Prerequisites
