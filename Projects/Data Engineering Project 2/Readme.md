@@ -40,7 +40,7 @@ Before loading the NiFi flow template, ensure you have the following installed o
 #### 1. Install Java
 
 - For Windows, Mac, or Linux, refer to the following YouTube videos:
-  - [How to Install Java on Windows](https://www.youtube.com/watch?v=p1c6XwslrJo)
+  - [How to Install Java on Windows](https://www.youtube.com/watch?v=Ghpq2mBtDs0)
   - [How to Install Java on Mac](https://www.youtube.com/watch?v=kl0j2YXNsOc)
   - [How to Install Java on Ubuntu](https://www.youtube.com/watch?v=0KeUq8kV3Sg)
 
