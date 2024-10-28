@@ -4,6 +4,29 @@
 
 This document provides step-by-step instructions on how to load and run a NiFi flow template. Please ensure you have the necessary dependencies installed before proceeding.
 
+## Flow Overview
+
+This NiFi flow automates the entire data ingestion, processing, and reporting pipeline for credit card transaction analysis, using Python scripts and dynamic attribute management for customizable output formats.
+1. **GenerateFlowFile (Scheduler)**
+This processor is used to trigger the entire NiFi flow. The GenerateFlowFile processor is scheduled to run every 2 hours but can be adjusted based on specific project requirements. This flexible scheduling initiates the pipeline automatically at set intervals.
+
+2.**ExecuteStreamCommand: Download Kaggle Data**
+This processor calls a Python script ```(Kaggle_data_download.py)``` to hit the Kaggle API and download the required credit card transaction dataset. The script uses the provided API key to authenticate and pull data from the Kaggle repository, saving it to a specified location
+
+3. **ExecuteStreamCommand: Create Table & Load Data**
+After downloading, this processor runs the script ```(Table_Creation_and_data_loading.py)``` to create a new table if it doesn't already exist in the target database. The script checks for table existence and then loads the downloaded data, ensuring uniqueness and maintaining data integrity.
+
+4. **UpdateAttribute: Set Attributes for Next Steps**
+This processor updates specific attributes or variables dynamically. The attributes define parameters like file formats (CSV, Excel, JSON, etc.) or SQL script selection, which will be used by downstream processors. This flexibility allows for dynamic control over the pipeline's processing and output generation.
+
+5.**Process Group: Execute Analysis & Output Generation**
+The flow then moves into a process group containing the following steps:
+- **ExecuteStreamCommand 1**: This processor runs the script ```(sql_analysis.py)``` based on the attributes set earlier. The script executes SQL queries to perform comprehensive analysis on the ingested transaction data. The queries may focus on various insights like spending patterns, fraud detection, or customer segmentation.
+- **ExecuteStreamCommand 2**: This processor runs a final script ```(Output_Generation.py)``` to generate reports in the specified output formats. Based on the attributes (```csv: true```, ```excel: false```, etc.), the script exports the analysis results in one or more formats such as CSV, Excel, JSON, Parquet, Document, or PDF, making it adaptable to different reporting needs.
+
+**End-to-End Automation & Flexibility**: This NiFi flow showcases end-to-end automation from data ingestion to analysis and output generation. Its attribute-based architecture provides flexibility in data handling, allowing users to switch between different scripts and output formats without modifying the core flow.
+
+
 ## Prerequisites
 
 Before loading the NiFi flow template, ensure you have the following installed on your machine:
