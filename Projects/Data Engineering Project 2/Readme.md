@@ -7,6 +7,7 @@ This document provides step-by-step instructions on how to load and run a NiFi f
 ## Flow Overview
 
 This NiFi flow automates the entire data ingestion, processing, and reporting pipeline for credit card transaction analysis, using Python scripts and dynamic attribute management for customizable output formats.
+
 1. **GenerateFlowFile (Scheduler)**
 This processor is used to trigger the entire NiFi flow. The GenerateFlowFile processor is scheduled to run every 2 hours but can be adjusted based on specific project requirements. This flexible scheduling initiates the pipeline automatically at set intervals.
 
