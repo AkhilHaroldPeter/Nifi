@@ -51,7 +51,7 @@ Before loading the NiFi flow template, ensure you have the following installed o
 
 - For detailed installation instructions, check the following YouTube videos:
   - [Installing Apache NiFi on Windows](https://www.youtube.com/watch?v=nplzhAKmH-s)
-  - [Installing Apache NiFi on Ubuntu](https://www.youtube.com/watch?v=lsS-vb1G1t8)
+  - [Installing Apache NiFi on Ubuntu/Mac](https://www.youtube.com/watch?v=JoSugPjJnPU&list=PL55symSEWBbMBSnNW_Aboh2TpYkNIFMgb&index=5)
 
 ## Loading a NiFi Flow Template
 
